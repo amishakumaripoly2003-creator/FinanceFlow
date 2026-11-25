@@ -1,0 +1,4970 @@
+/* ================================
+   RESET & BASIC STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background-color: #111827;
+    color: white;
+
+    padding: 25px 20px;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 50px;
+}
+
+.logo span {
+    font-size: 28px;
+}
+
+.logo h2 {
+    font-size: 20px;
+}
+
+
+/* Navigation */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #cbd5e1;
+
+    padding: 12px 15px;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #374151;
+    color: white;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+    margin-left: 240px;
+    min-height: 100vh;
+
+    padding: 30px 40px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+
+/* Theme Button */
+
+.theme-btn {
+    border: none;
+    background-color: white;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logout-btn {
+    border: none;
+    background-color: #ef4444;
+    color: white;
+
+    padding: 12px 20px;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ================================
+   DASHBOARD
+================================ */
+
+.dashboard h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* ================================
+   OVERVIEW CARDS
+================================ */
+
+.overview-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+
+.finance-card {
+    background-color: white;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.finance-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Card Icon */
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+    background-color: #f3f4f6;
+}
+
+
+/* Card Text */
+
+.card-info p {
+    font-size: 14px;
+
+    color: #6b7280;
+
+    margin-bottom: 6px;
+}
+
+
+.card-info h3 {
+    font-size: 23px;
+
+    color: #111827;
+}
+
+/* ================================
+   SECTION HEADER
+================================ */
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.section-header p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin-top: 6px;
+}
+
+
+/* ================================
+   ADD TRANSACTION BUTTON
+================================ */
+
+.add-transaction-btn {
+    border: none;
+
+    background-color: #111827;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.add-transaction-btn:hover {
+    background-color: #374151;
+
+    transform: translateY(-2px);
+}
+
+/* ================================
+   TRANSACTION MODAL
+================================ */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+
+.transaction-modal {
+    width: 100%;
+
+    max-width: 520px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Modal Header */
+
+.modal-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-header h2 {
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+
+.modal-header p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* Close Button */
+
+.close-modal-btn {
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    color: #6b7280;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.close-modal-btn:hover {
+    color: #111827;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+}
+
+
+.form-group label span {
+    font-weight: 400;
+
+    color: #9ca3af;
+}
+
+
+/* Inputs */
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #111827;
+
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+
+/* ================================
+   TYPE OPTIONS
+================================ */
+
+.type-options {
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.type-option {
+    flex: 1;
+
+    cursor: pointer;
+}
+
+
+.type-option input {
+    display: none;
+}
+
+
+.type-option span {
+    display: block;
+
+    text-align: center;
+
+    padding: 11px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    color: #6b7280;
+
+    transition: 0.2s;
+}
+
+
+.type-option input:checked + span {
+    background-color: #111827;
+
+    border-color: #111827;
+
+    color: white;
+}
+
+
+/* ================================
+   MODAL BUTTONS
+================================ */
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.cancel-btn,
+.save-transaction-btn {
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.cancel-btn {
+    border: 1px solid #d1d5db;
+
+    background-color: white;
+
+    color: #374151;
+}
+
+
+.cancel-btn:hover {
+    background-color: #f3f4f6;
+}
+
+
+.save-transaction-btn {
+    border: none;
+
+    background-color: #111827;
+
+    color: white;
+}
+
+
+.save-transaction-btn:hover {
+    background-color: #374151;
+}
+
+/* ================================
+   RECENT TRANSACTIONS
+================================ */
+
+
+
+/* ================================
+   ANALYTICS
+================================ */
+
+.analytics-section {
+    margin-top: 30px;
+}
+
+.analytics-header {
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.analytics-filter {
+    display: flex;
+
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.analytics-filter label {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #7b8494;
+}
+
+.analytics-filter select {
+    min-width: 145px;
+
+    padding: 10px 34px 10px 13px;
+
+    border: 1px solid #e3e7ee;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.analytics-filter select:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.analytics-header h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.analytics-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ================================
+   ANALYTICS CHART
+================================ */
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.analytics-card {
+    margin-bottom: 30px;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    max-height: 300px;
+}
+
+/* ================================
+   ANALYTICS SUMMARY
+================================ */
+
+.analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+}
+
+.summary-card p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.summary-card h3 {
+    font-size: 22px;
+    color: #111827;
+}
+
+.analytics-summary-section {
+    margin-top: 30px;
+}
+
+.analytics-summary-heading {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Financial Insights */
+
+.financial-insights-card {
+    padding: 22px;
+}
+
+.financial-insights-card h3 {
+    margin-bottom: 20px;
+}
+
+.financial-insights {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.insight-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 16px;
+    background: #f8f9fc;
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.insight-item:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 5px 16px rgba(15, 23, 42, 0.05);
+}
+
+.insight-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #eef2ff;
+    font-size: 18px;
+}
+
+.insight-content {
+    min-width: 0;
+}
+
+.insight-content strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.insight-content p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #7b8494;
+}
+
+/* ================================
+   CUSTOM DATE RANGE
+================================ */
+
+.custom-date-range {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.custom-date-range input {
+    padding: 10px 11px;
+    border: 1px solid #e3e7ee;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+
+.custom-date-range input:focus {
+    border-color: #6366f1;
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.custom-date-range span {
+    font-size: 12px;
+    color: #8a93a3;
+    font-weight: 600;
+}
+
+/* ================================
+   BUDGET VS ACTUAL
+================================ */
+
+.budget-vs-actual-card {
+    padding: 22px;
+}
+
+.budget-vs-actual-card h3 {
+    margin-bottom: 20px;
+}
+
+.budget-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.budget-stat {
+    padding: 14px;
+    background: #f8f9fc;
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+}
+
+.budget-stat span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #8a93a3;
+}
+
+.budget-stat strong {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.budget-progress-wrapper {
+    margin-top: 20px;
+}
+
+.budget-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.budget-progress-header span {
+    font-size: 12px;
+    color: #7b8494;
+}
+
+.budget-progress-header strong {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+.analytics-budget-progress {
+    width: 100%;
+    height: 9px;
+    overflow: hidden;
+    background: #eef0f4;
+    border-radius: 20px;
+}
+
+.analytics-budget-progress-bar {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: #6366f1;
+    transition: width 0.3s ease;
+}
+
+.budget-status {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f2f5;
+    font-size: 12px;
+    color: #7b8494;
+}
+
+/* ================================
+   SETTINGS
+================================ */
+
+.settings-section {
+    margin-top: 30px;
+}
+
+.settings-card {
+    background-color: white;
+    border-radius: 14px;
+    padding: 10px 24px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.settings-item:last-child {
+    border-bottom: none;
+}
+
+.settings-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #111827;
+}
+
+.settings-item p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.settings-btn,
+.settings-select,
+.danger-btn {
+    padding: 10px 14px;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.settings-btn {
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+.settings-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.settings-select {
+    border: 1px solid #d1d5db;
+    background-color: white;
+    color: #374151;
+}
+
+.danger-btn {
+    border: none;
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.danger-btn:hover {
+    background-color: #fecaca;
+}
+
+/* ================================
+   DARK MODE
+================================ */
+
+body.dark-mode {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+body.dark-mode .main-content {
+    color: #f9fafb;
+}
+
+body.dark-mode .header p,
+body.dark-mode .section-header p,
+body.dark-mode .transactions-header p {
+    color: #9ca3af;
+}
+
+/* Cards */
+
+body.dark-mode .finance-card,
+body.dark-mode .transactions-section,
+body.dark-mode .transaction-modal,
+body.dark-mode .analytics-card,
+body.dark-mode .summary-card,
+body.dark-mode .settings-card {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+/* Card headings and text */
+
+body.dark-mode .card-info h3,
+body.dark-mode .transaction-title,
+body.dark-mode .settings-item h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .card-info p,
+body.dark-mode .transaction-meta,
+body.dark-mode .settings-item p {
+    color: #9ca3af;
+}
+
+/* Transaction */
+
+body.dark-mode .transaction-item {
+    border-color: #374151;
+}
+
+body.dark-mode .transaction-item:hover {
+    background-color: #374151;
+}
+
+/* Settings */
+
+body.dark-mode .settings-item {
+    border-color: #374151;
+}
+
+body.dark-mode .settings-btn {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+body.dark-mode .settings-select {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+/* Theme button */
+
+body.dark-mode .theme-btn {
+    background-color: #1f2937;
+    color: white;
+}
+
+/* Modal */
+
+body.dark-mode .form-group label,
+body.dark-mode .modal-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .modal-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: white;
+}
+
+body.dark-mode .cancel-btn {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: white;
+}
+
+#transactionsSearchInput,
+#transactionsTypeFilter,
+#transactionsCategoryFilter {
+    height: 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    color: #374151;
+    padding: 0 12px;
+}
+
+#transactionsSearchInput {
+    width: 280px;
+}
+
+#transactionsTypeFilter,
+#transactionsCategoryFilter {
+    width: 140px;
+    cursor: pointer;
+}
+
+#transactionsSearchInput:focus,
+#transactionsTypeFilter:focus,
+#transactionsCategoryFilter:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+.transaction-tools {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+
+================================ */
+
+@media (max-width: 900px) {
+
+    .overview-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .transactions-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .transaction-tools {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    #searchInput,
+    #transactionsSearchInput {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+
+    .logo h2 {
+        font-size: 17px;
+    }
+
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .add-transaction-btn {
+        width: 100%;
+    }
+
+    .transaction-tools {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #searchInput,
+    #transactionsSearchInput,
+    #typeFilter,
+    #categoryFilter,
+    #transactionsTypeFilter,
+    #transactionsCategoryFilter {
+        width: 100%;
+    }
+
+    .transaction-item {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .transaction-right {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+}
+
+/* ================================
+   EMPTY STATE
+================================ */
+
+.empty-state {
+    text-align: center;
+    padding: 45px 20px;
+    color: #6b7280;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.empty-state h3 {
+    font-size: 17px;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.empty-state p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* =========================
+   MONTHLY BUDGET
+========================= */
+
+.budget-section {
+    margin-top: 30px;
+}
+
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.budget-header h2 {
+    margin-bottom: 5px;
+}
+
+.budget-header p {
+    margin: 0;
+}
+
+.budget-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+}
+
+.budget-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.budget-info p {
+    margin-bottom: 6px;
+}
+
+.budget-info h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#budgetPercentage {
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* ================================
+   FINANCIAL GOALS
+================================ */
+
+.goals-section {
+    margin-top: 30px;
+}
+
+.goals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.goals-header h2 {
+    margin-bottom: 5px;
+}
+
+.goals-header p {
+    color: #777;
+    margin: 0;
+}
+
+.goals-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.goal-card {
+    background: #ffffff;
+
+    border: 1px solid #edf0f5;
+    border-radius: 18px;
+
+    padding: 22px;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #e1e5f0;
+
+    box-shadow:
+        0 10px 26px rgba(15, 23, 42, 0.08);
+}
+
+.goal-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.goal-card-header h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.goal-card-header p {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.goal-percentage {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.goal-amounts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+
+.goal-amounts div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.goal-amounts span {
+    color: #777;
+    font-size: 13px;
+}
+
+.goal-amounts strong {
+    font-size: 16px;
+}
+
+.goal-progress-container {
+    margin-top: 18px;
+}
+
+.goal-progress-bar {
+    width: 100%;
+    height: 9px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.goal-progress {
+    height: 100%;
+    width: 0;
+    background: #6366f1;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* ================================
+   BUDGET PROGRESS BAR
+================================ */
+
+.budget-progress-container {
+    margin-top: 20px;
+}
+
+.budget-progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.budget-progress {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+
+/* ================================
+   FINANCIAL GOALS PROGRESS BAR
+================================ */
+
+.goal-progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.goal-progress {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* ================================
+   GOAL ACTION BUTTONS
+================================ */
+
+.goal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.goal-actions button {
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Add Money */
+
+.add-money-btn {
+    background: #22c55e;
+    color: white;
+}
+
+.add-money-btn:hover {
+    background: #16a34a;
+    transform: translateY(-1px);
+}
+
+
+/* Edit */
+
+.edit-goal-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.edit-goal-btn:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+
+/* Delete */
+
+.delete-goal-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.delete-goal-btn:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   GOAL DESCRIPTION
+================================ */
+
+.goal-description {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+
+/* ================================
+   GOAL CARD
+================================ */
+
+
+/* ================================
+   GOAL PROGRESS
+================================ */ 
+
+
+/* ================================
+   RECURRING TRANSACTION ACTIONS
+================================ */
+
+.recurring-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+/* Edit Button */
+
+.edit-recurring-btn {
+    padding: 9px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2563eb;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.edit-recurring-btn:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+/* Delete Button */
+
+.delete-recurring-btn {
+    padding: 9px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #dc2626;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.delete-recurring-btn:hover {
+    background-color: #b91c1c;
+
+    transform: translateY(-1px);
+}
+
+/* Active / Deactivate Button */
+.toggle-recurring-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-recurring-btn:hover {
+    transform: translateY(-1px);
+    background: #c8e6c9;
+}
+
+/* Deactivated state */
+.toggle-recurring-btn.inactive {
+    background: #f1f1f1;
+    color: #666;
+}
+
+.toggle-recurring-btn.inactive:hover {
+    background: #e0e0e0;
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FINANCEFLOW UI POLISH - STEP 1
+   Premium Dashboard Base
+========================================================= */
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --sidebar-bg: #111827;
+    --page-bg: #f6f7fb;
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-secondary: #6b7280;
+    --border-light: #e5e7eb;
+    --card-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    background: var(--page-bg);
+    color: var(--text-main);
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 250px;
+    background: linear-gradient(
+        180deg,
+        #111827 0%,
+        #0f172a 100%
+    );
+
+    padding: 28px 18px;
+
+    box-shadow:
+        4px 0 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Logo */
+
+.logo {
+    gap: 11px;
+    margin-bottom: 55px;
+    padding: 0 6px;
+}
+
+.logo span {
+    font-size: 27px;
+}
+
+.logo h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+
+/* Navigation */
+
+.sidebar-nav {
+    gap: 7px;
+}
+
+.nav-link {
+    padding: 13px 14px;
+    border-radius: 10px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: white;
+    transform: translateX(2px);
+}
+
+.nav-link.active {
+    background: #374151;
+    color: white;
+
+    box-shadow:
+        inset 3px 0 0 #818cf8;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+    margin-left: 250px;
+    padding: 36px 42px 50px;
+
+    min-height: 100vh;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    margin-bottom: 38px;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    color: #111827;
+}
+
+.header p {
+    margin-top: 5px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* Theme button */
+
+.theme-btn {
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid #edf0f4;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 22px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ================================
+   SECTION HEADINGS
+================================ */
+
+.dashboard h2 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.section-header {
+    margin-bottom: 18px;
+}
+
+.section-header p {
+    color: #7b8494;
+}
+
+
+/* ================================
+   OVERVIEW CARDS
+================================ */
+
+.overview-cards {
+    gap: 18px;
+    margin-bottom: 36px;
+}
+
+
+.finance-card {
+    padding: 20px 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid transparent;
+
+    gap: 15px;
+
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+
+/* Individual card colors */
+
+.finance-card:nth-child(1) {
+    background: #fff7ed;
+    border-color: #fde7cf;
+}
+
+.finance-card:nth-child(2) {
+    background: #effaf7;
+    border-color: #d5f0e8;
+}
+
+.finance-card:nth-child(3) {
+    background: #fff1f5;
+    border-color: #f8dbe5;
+}
+
+.finance-card:nth-child(4) {
+    background: #f1f5ff;
+    border-color: #dce6ff;
+}
+
+
+/* Hover */
+
+.finance-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Card icon */
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+/* Matching icon backgrounds */
+
+.finance-card:nth-child(1) .card-icon {
+    background: #ffead1;
+}
+
+.finance-card:nth-child(2) .card-icon {
+    background: #d4f3e8;
+}
+
+.finance-card:nth-child(3) .card-icon {
+    background: #ffd8e6;
+}
+
+.finance-card:nth-child(4) .card-icon {
+    background: #dce7ff;
+}
+
+
+/* Card text */
+
+.card-info p {
+    font-size: 13px;
+    color: #6f7a8c;
+
+    margin-bottom: 5px;
+}
+
+.card-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.4px;
+}
+
+
+.finance-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #e3e6ef;
+
+    box-shadow:
+        0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+
+/* Card text */
+
+.card-info p {
+    font-size: 13px;
+    color: #7b8494;
+
+    margin-bottom: 5px;
+}
+
+.card-info h3 {
+    font-size: 23px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.4px;
+}
+
+
+/* ================================
+   PRIMARY BUTTONS
+================================ */
+
+.add-transaction-btn {
+    background: #111827;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 12px rgba(17, 24, 39, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.add-transaction-btn:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(17, 24, 39, 0.2);
+}
+
+
+/* ================================
+   MONTHLY BUDGET
+================================ */
+
+.budget-section {
+    margin-top: 34px;
+}
+
+.budget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+.budget-header .add-transaction-btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.budget-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.budget-header p {
+    margin-top: 3px;
+
+    font-size: 13px;
+    color: #7b8494;
+}
+
+.budget-card {
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow: var(--card-shadow);
+}
+
+.budget-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+
+    margin-top: 22px;
+}
+
+
+.budget-stat {
+    padding: 16px 18px;
+
+    border-radius: 13px;
+
+    border: 1px solid transparent;
+}
+
+
+.budget-stat p {
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    color: #69758a;
+}
+
+
+.budget-stat h3 {
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* Monthly Budget */
+
+.budget-stat-budget {
+    background: #fff8ef;
+    border-color: #fce8d2;
+}
+
+
+/* Spent */
+
+.budget-stat-spent {
+    background: #effaf7;
+    border-color: #d7f0e8;
+}
+
+
+/* Remaining */
+
+.budget-stat-remaining {
+    background: #f2f5ff;
+    border-color: #dfe7ff;
+}
+
+
+.budget-progress-container {
+    margin-top: 20px;
+}
+
+.budget-progress-bar {
+    height: 9px;
+
+    background: #eef0f4;
+
+    border-radius: 20px;
+}
+
+.budget-progress {
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #818cf8
+    );
+
+    border-radius: 20px;
+}
+
+
+/* ================================
+   FINANCIAL GOALS
+================================ */
+
+.goals-section {
+    margin-top: 34px;
+}
+
+.recurring-section {
+    margin-top: 34px !important;
+}
+
+.goals-header {
+    margin-bottom: 18px;
+}
+
+.goals-header p {
+    color: #7b8494;
+}
+
+.goals-list {
+    gap: 18px;
+}
+
+.goal-card {
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.055);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #e1e4ea;
+
+    box-shadow:
+        0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.goal-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.goal-card-header h3 {
+    margin: 0 0 5px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.2px;
+}
+
+.goal-card-header p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #7b8494;
+}
+
+.goal-percentage {
+    color: #6366f1;
+}
+
+.goal-amounts {
+    margin-top: 20px;
+}
+
+.goal-amounts span {
+    color: #7b8494;
+}
+
+
+/* =========================================================
+   RECENT TRANSACTIONS — PREMIUM DASHBOARD STYLE
+======.goal-pro=================================================== */
+
+.transactions-section {
+    margin-top: 34px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebf1;
+    border-radius: 18px;
+
+    padding: 24px;
+
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Header */
+
+.transactions-header {
+    margin-bottom: 22px;
+}
+
+.transactions-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #111827;
+    letter-spacing: -0.3px;
+}
+
+.transactions-header p {
+    margin: 0;
+
+    color: #7b8494;
+    font-size: 13px;
+}
+
+
+/* Transaction list */
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* Transaction row */
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 70px;
+
+    padding: 13px 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+    border-radius: 14px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.transaction-item:hover {
+    background: #fafbff;
+
+    border-color: #dfe3f5;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(15, 23, 42, 0.07);
+}
+
+
+/* Left side */
+
+.transaction-left {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+/* Icon */
+
+.transaction-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #f4f5f9;
+
+    font-size: 19px;
+}
+
+
+/* Transaction information */
+
+.transaction-title {
+    margin-bottom: 4px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.transaction-meta {
+    font-size: 12px;
+
+    color: #8a93a3;
+}
+
+
+/* Right side */
+
+.transaction-right {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+/* Amount */
+
+.transaction-amount {
+    min-width: 105px;
+
+    margin-right: 5px;
+
+    text-align: right;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* Income */
+
+.transaction-amount.income {
+    color: #16a34a;
+}
+
+
+/* Expense */
+
+.transaction-amount.expense {
+    color: #dc2626;
+}
+
+
+/* Buttons */
+
+.transaction-right button {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 8px 12px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Edit */
+
+.transaction-right .edit-btn {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.transaction-right .edit-btn:hover {
+    background: #e0e7ff;
+
+    transform: translateY(-1px);
+}
+
+
+/* Delete */
+
+.transaction-right .delete-btn {
+    background: #fff1f2;
+    color: #dc2626;
+}
+
+.transaction-right .delete-btn:hover {
+    background: #fee2e2;
+
+    transform: translateY(-1px);
+}
+
+/* ================================
+   SEARCH & FILTERS
+================================ */
+
+#searchInput,
+#transactionsSearchInput,
+#typeFilter,
+#categoryFilter,
+#transactionsTypeFilter,
+#transactionsCategoryFilter {
+    border-color: #e1e5ec;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#searchInput:focus,
+#transactionsSearchInput:focus,
+#typeFilter:focus,
+#categoryFilter:focus,
+#transactionsTypeFilter:focus,
+#transactionsCategoryFilter:focus {
+    border-color: #818cf8;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+
+/* ================================
+   GENERAL CARD POLISH
+================================ */
+
+.budget-card,
+.goal-card,
+.transactions-section,
+.finance-card,
+.analytics-card,
+.summary-card,
+.settings-card {
+    backdrop-filter: blur(4px);
+}
+
+
+/* ================================
+   DARK MODE - KEEP COMPATIBLE
+================================ */
+
+body.dark-mode {
+    --page-bg: #111827;
+    --card-bg: #1f2937;
+}
+
+body.dark-mode .budget-card,
+body.dark-mode .goal-card {
+    background: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+}
+
+body.dark-mode .budget-info h3,
+body.dark-mode .goal-card-header h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .budget-info p,
+body.dark-mode .goals-header p,
+body.dark-mode .goal-card-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .budget-progress-bar,
+body.dark-mode .goal-progress-bar {
+    background: #374151;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+        padding: 30px;
+    }
+
+    .overview-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.logo {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 10px;
+}
+
+.main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 15px;
+    min-height: auto;
+    box-sizing: border-box;
+}
+
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   DASHBOARD CONTENT GRID - STEP 2
+========================================================= */
+
+.dashboard-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+
+/* Keep sections compact inside the grid */
+
+.dashboard-content-grid .budget-section,
+.dashboard-content-grid .goals-section {
+    margin-top: 0;
+}
+
+
+/* Budget card should fill its column */
+
+.dashboard-content-grid .budget-card {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Goals list */
+
+.dashboard-content-grid .goals-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+
+/* Make goal cards slightly more compact */
+
+.dashboard-content-grid .goal-card {
+    padding: 20px;
+}
+
+
+/* Better spacing inside the two-column layout */
+
+.dashboard-content-grid .budget-header,
+.dashboard-content-grid .goals-header {
+    min-height: 58px;
+}
+
+
+/* =========================================================
+   RESPONSIVE GRID
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   STEP 3 - COMPACT FINANCIAL GOALS
+========================================================= */
+
+.dashboard-content-grid .goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dashboard-content-grid .goal-card {
+    padding: 17px 18px;
+    border-radius: 15px;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.055);
+}
+
+
+/* Goal title + percentage */
+
+.dashboard-content-grid .goal-card-header {
+    gap: 10px;
+}
+
+.dashboard-content-grid .goal-card-header h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.dashboard-content-grid .goal-card-header p {
+    font-size: 12px;
+}
+
+
+/* Percentage */
+
+.dashboard-content-grid .goal-percentage {
+    font-size: 16px;
+}
+
+
+/* Saved / Target */
+
+.dashboard-content-grid .goal-amounts {
+    margin-top: 14px;
+}
+
+.dashboard-content-grid .goal-amounts span {
+    font-size: 12px;
+}
+
+.dashboard-content-grid .goal-amounts strong {
+    font-size: 14px;
+}
+
+
+/* Progress */
+
+.dashboard-content-grid .goal-progress-bar {
+    height: 7px;
+    margin-top: 10px;
+}
+
+
+/* Description */
+
+.dashboard-content-grid .goal-description {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #7b8494;
+}
+
+
+/* Goal buttons */
+
+.dashboard-content-grid .goal-actions {
+    margin-top: 12px;
+    gap: 8px;
+}
+
+.dashboard-content-grid .goal-actions button {
+    padding: 8px 12px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   STEP 4 - SPENDING OVERVIEW
+========================================================= */
+
+.dashboard-content-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+
+/* Budget + Spending Overview */
+
+.dashboard-content-grid .budget-section,
+.dashboard-content-grid .spending-overview-section {
+    min-width: 0;
+}
+
+
+/* Spending Overview header */
+
+.spending-overview-section {
+    margin-top: 0;
+}
+
+
+/* Spending Header */
+
+.spending-overview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.spending-period-select {
+    padding: 8px 12px;
+
+    border: 1px solid #e1e5ee;
+    border-radius: 9px;
+
+    background: #f8f9fc;
+
+    color: #4b5563;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.spending-period-select:focus {
+    border-color: #cfd6e6;
+}
+
+.spending-overview-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #111827;
+    margin-bottom: 3px;
+}
+
+.spending-overview-header p {
+    font-size: 13px;
+    color: #7b8494;
+}
+
+
+/* Spending Card */
+
+.spending-overview-card {
+    position: relative;
+
+    height: 265px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 16px;
+
+    padding: 16px 18px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Spending Chart */
+
+.spending-chart-container {
+    width: 100%;
+    height: 175px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spending-chart-container canvas {
+    width: 100% !important;
+    height: 175px !important;
+
+    max-width: 100%;
+    max-height: 175px;
+}
+
+/* Empty state */
+
+.spending-overview-empty {
+    position: absolute;
+
+    inset: 0;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #9ca3af;
+
+    text-align: center;
+}
+
+.spending-overview-empty div {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.spending-overview-empty p {
+    font-size: 13px;
+}
+
+
+/* Financial Goals should span both columns */
+
+.dashboard-content-grid .goals-section {
+    grid-column: 1 / -1;
+}
+
+
+/* Goals in full-width area */
+
+.dashboard-content-grid .goals-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+/* ================================
+   FINANCIAL GOALS
+================================ */
+
+.dashboard-content-grid .goals-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* Goal Card */
+
+.dashboard-content-grid .goal-card {
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+
+    padding: 21px;
+
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dashboard-content-grid .goal-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #e1e5ec;
+
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Goal Header */
+
+.dashboard-content-grid .goal-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+.dashboard-content-grid .goal-card-header h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.2px;
+}
+
+.dashboard-content-grid .goal-card-header p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #8a93a3;
+}
+
+
+/* Percentage */
+
+.dashboard-content-grid .goal-percentage {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #6366f1;
+
+    white-space: nowrap;
+}
+
+
+/* Amounts */
+
+.dashboard-content-grid .goal-amounts {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-top: 18px;
+}
+
+.dashboard-content-grid .goal-amounts div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.dashboard-content-grid .goal-amounts span {
+    font-size: 11px;
+
+    color: #8a93a3;
+}
+
+.dashboard-content-grid .goal-amounts strong {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* Progress Bar */
+
+.dashboard-content-grid .goal-progress-bar {
+    width: 100%;
+    height: 7px;
+
+    margin-top: 13px;
+
+    background: #edf0f4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.dashboard-content-grid .goal-progress {
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #818cf8
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* Description */
+
+.dashboard-content-grid .goal-description {
+    margin: 11px 0 0;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    color: #7b8494;
+}
+
+
+/* Goal Actions */
+
+.dashboard-content-grid .goal-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.dashboard-content-grid .goal-actions button {
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dashboard-content-grid .goal-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+
+/* =========================================================
+   STEP 6 - RECURRING TRANSACTIONS POLISH
+========================================================= */
+
+.recurring-section {
+    margin-top: 34px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+
+    box-sizing: border-box;
+}
+
+
+/* Header */
+
+.recurring-section .goals-header {
+    margin-bottom: 18px;
+}
+
+.recurring-section .goals-header h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.recurring-section .goals-header p {
+    color: #7b8494;
+    font-size: 14px;
+}
+
+
+/* Recurring cards layout */
+
+.recurring-section .goals-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* Recurring card */
+
+.recurring-section .goal-card {
+    margin-bottom: 0;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.055);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.recurring-section .goal-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #e1e4ea;
+
+    box-shadow:
+        0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Card header */
+
+.recurring-section .goal-card-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+
+.recurring-section .goal-card-header h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.recurring-section .goal-card-header p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #7b8494;
+
+    text-transform: capitalize;
+}
+
+
+/* Amount */
+
+.recurring-section .goal-percentage {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #6366f1;
+
+    white-space: nowrap;
+}
+
+
+/* Type + next date */
+
+.recurring-section .goal-amounts {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #f0f2f5;
+}
+
+
+.recurring-section .goal-amounts div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.recurring-section .goal-amounts span {
+    font-size: 12px;
+
+    color: #8a93a3;
+}
+
+
+.recurring-section .goal-amounts strong {
+    font-size: 13px;
+
+    color: #111827;
+
+    text-transform: capitalize;
+}
+
+
+/* Description */
+
+.recurring-section .goal-description {
+    margin: 13px 0 0;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #f0f2f5;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    color: #7b8494;
+}
+
+
+/* Actions */
+
+.recurring-section .recurring-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+
+.recurring-section .recurring-actions button {
+    padding: 8px 13px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .recurring-section .goals-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   STEP 7 - RECENT TRANSACTIONS POLISH
+========================================================= */
+
+.transactions-section {
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 7px 22px rgba(15, 23, 42, 0.055);
+}
+
+
+/* Header */
+
+.transactions-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.transactions-header h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.transactions-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #7b8494;
+}
+
+
+/* Search + filters */
+
+.transaction-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px;
+
+    background: #f8f9fc;
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+}
+
+.transaction-tools input,
+.transaction-tools select {
+    height: 40px;
+    border: 1px solid #e1e5eb;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.transaction-tools input {
+    width: 245px;
+    padding: 0 13px;
+}
+
+.transaction-tools select {
+    min-width: 130px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.transaction-tools input:focus,
+.transaction-tools select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+
+/* Transaction list */
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+
+/* Individual transaction */
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 16px 18px;
+
+    border: 1px solid #edf0f5;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.025);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.transaction-item:hover {
+    transform: translateY(-2px);
+
+    border-color: #e1e5ee;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.transaction-item:hover {
+    transform: translateY(-1px);
+
+    border-color: #e0e4eb;
+
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.05);
+}
+
+
+/* Left side */
+
+.transaction-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.transaction-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: #f6f7fb;
+    border: 1px solid #eef0f5;
+
+    font-size: 21px;
+
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.transaction-item:hover .transaction-icon {
+    transform: scale(1.05);
+
+    box-shadow: 0 5px 12px rgba(15, 23, 42, 0.07);
+}
+
+.transaction-title {
+    margin-bottom: 5px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #172033;
+    letter-spacing: -0.1px;
+}
+
+.transaction-meta {
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #8b95a7;
+
+    letter-spacing: 0.1px;
+}
+
+/* Right side */
+
+.transaction-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.transaction-amount {
+    min-width: 115px;
+
+    margin-right: 6px;
+
+    text-align: right;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: -0.1px;
+}
+
+.transaction-amount.income {
+    color: #16a34a;
+}
+
+.transaction-amount.expense {
+    color: #dc2626;
+}
+
+
+/* Transaction buttons */
+
+.transaction-right button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 8px 12px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.transaction-right .edit-btn {
+    background: #eef2ff;
+    color: #4f46e5;
+
+    border: 1px solid #e0e7ff;
+    border-radius: 9px;
+
+    padding: 8px 13px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.transaction-right .edit-btn:hover {
+    background: #e0e7ff;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 3px 8px rgba(79, 70, 229, 0.12);
+}
+
+
+.transaction-right .delete-btn {
+    background: #fff1f2;
+    color: #dc2626;
+
+    border: 1px solid #ffe4e6;
+    border-radius: 9px;
+
+    padding: 8px 13px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.transaction-right .delete-btn:hover {
+    background: #fee2e2;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 3px 8px rgba(220, 38, 38, 0.10);
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .transactions-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .transaction-tools {
+        flex-wrap: wrap;
+    }
+
+    .transaction-tools input {
+        width: 100%;
+    }
+
+    .transaction-item {
+        align-items: flex-start;
+    }
+
+    .transaction-right {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .transaction-amount {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+/* ================================
+   FINANCIAL GOALS OUTER CARD
+================================ */
+
+.dashboard-content-grid .goals-section {
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Goals Header */
+
+.dashboard-content-grid .goals-section .goals-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.dashboard-content-grid .goals-section .goals-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.3px;
+}
+
+
+.dashboard-content-grid .goals-section .goals-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #7b8494;
+}
+
+
+/* Add Goal Button */
+
+.dashboard-content-grid .goals-section .goals-header .add-transaction-btn {
+    flex-shrink: 0;
+
+    padding: 11px 17px;
+
+    border-radius: 10px;
+}
+
+
+/* Goals List */
+
+.dashboard-content-grid .goals-section .goals-list {
+    margin-top: 0;
+}
+
+/* ================================
+   RECURRING TRANSACTION ACTIONS
+================================ */
+
+.dashboard-content-grid .recurring-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+
+/* Common button style */
+
+.dashboard-content-grid .recurring-actions button {
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dashboard-content-grid .recurring-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* Edit */
+
+.dashboard-content-grid .edit-recurring-btn {
+    background: #eef2ff;
+
+    color: #4f46e5;
+}
+
+.dashboard-content-grid .edit-recurring-btn:hover {
+    background: #e0e7ff;
+}
+
+
+/* Activate / Deactivate */
+
+.dashboard-content-grid .toggle-recurring-btn.active {
+    background: #fff7ed;
+
+    color: #ea580c;
+}
+
+.dashboard-content-grid .toggle-recurring-btn.active:hover {
+    background: #ffedd5;
+}
+
+
+.dashboard-content-grid .toggle-recurring-btn.inactive {
+    background: #ecfdf5;
+
+    color: #16a34a;
+}
+
+.dashboard-content-grid .toggle-recurring-btn.inactive:hover {
+    background: #dcfce7;
+}
+
+
+/* Delete */
+
+.dashboard-content-grid .delete-recurring-btn {
+    background: #fff1f2;
+
+    color: #dc2626;
+}
+
+.dashboard-content-grid .delete-recurring-btn:hover {
+    background: #fee2e2;
+}
+
+/* ================================
+   RECURRING TRANSACTIONS OUTER CARD
+================================ */
+
+.recurring-section {
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+
+    margin-top: 0;
+}
+
+
+/* Recurring Header */
+
+.recurring-section .goals-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.recurring-section .goals-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.3px;
+}
+
+
+.recurring-section .goals-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #7b8494;
+}
+
+
+/* Add Recurring Button */
+
+.recurring-section .add-transaction-btn {
+    flex-shrink: 0;
+
+    padding: 11px 17px;
+
+    border-radius: 10px;
+}
+
+/* ================================
+   SPENDING METRICS
+================================ */
+
+.spending-metrics-card {
+    padding: 22px;
+}
+
+.spending-metrics-card h3 {
+    margin-bottom: 20px;
+}
+
+.spending-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.spending-metric {
+    padding: 16px;
+    background: #f8f9fc;
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+}
+
+.spending-metric span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    color: #8a93a3;
+}
+
+.spending-metric strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* =========================================================
+   ANALYTICS UI REDESIGN - STEP 1
+   ========================================================= */
+
+.analytics-section {
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+
+/* ================================
+   ANALYTICS HEADER
+   ================================ */
+
+.analytics-header {
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+.analytics-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+
+    color: #111827;
+}
+
+.analytics-header p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #7b8494;
+}
+
+
+/* ================================
+   ANALYTICS FILTER
+   ================================ */
+
+.analytics-filter {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.analytics-filter label {
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #7b8494;
+}
+
+.analytics-filter select {
+    min-width: 150px;
+
+    padding: 10px 34px 10px 13px;
+
+    border: 1px solid #e3e7ee;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    outline: none;
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.analytics-filter select:hover {
+    background: #fafbfc;
+}
+
+.analytics-filter select:focus {
+    border-color: #818cf8;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+
+/* ================================
+   CUSTOM DATE RANGE
+   ================================ */
+
+.custom-date-range {
+    display: none;
+
+    align-items: center;
+    gap: 8px;
+}
+
+.custom-date-range input {
+    padding: 10px 11px;
+
+    border: 1px solid #e3e7ee;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    outline: none;
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.custom-date-range input:focus {
+    border-color: #818cf8;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.custom-date-range span {
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #8a93a3;
+}
+
+/* =========================================================
+   ANALYTICS UI REDESIGN - STEP 2
+   CHART CARDS
+   ========================================================= */
+
+.analytics-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* ================================
+   CHART CARD
+   ================================ */
+
+.analytics-card {
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.055);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #e1e4ea;
+
+    box-shadow:
+        0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ================================
+   CARD HEADING
+   ================================ */
+
+.analytics-card h3 {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: -0.2px;
+
+    color: #111827;
+}
+
+
+/* ================================
+   CHART AREA
+   ================================ */
+
+.analytics-card .chart-container {
+    position: relative;
+
+    width: 100%;
+    height: 260px;
+}
+
+.analytics-card .chart-container canvas {
+    max-width: 100%;
+}
+
+
+/* ================================
+   MONTHLY TREND
+   ================================ */
+
+.analytics-card.monthly-trend-card {
+    grid-column: 1 / -1;
+}
+
+.analytics-card.monthly-trend-card
+.chart-container {
+    height: 280px;
+}
+
+/* =========================================================
+   ANALYTICS UI REDESIGN - STEP 3
+   ANALYTICS SUMMARY
+   ========================================================= */
+
+.analytics-summary-section {
+    margin-top: 30px;
+}
+
+.analytics-summary-heading {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: #111827;
+}
+
+.analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.analytics-summary .summary-card {
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.055);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.analytics-summary .summary-card:hover {
+    transform: translateY(-2px);
+    border-color: #e1e4ea;
+    box-shadow:
+        0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.analytics-summary .summary-card p {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a93a3;
+}
+
+.analytics-summary .summary-card h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+    color: #111827;
+}
+
+/* =========================================================
+   ANALYTICS UI REDESIGN - STEP 3
+   ANALYTICS SUMMARY
+   ========================================================= */
+
+.analytics-summary-section {
+    margin-top: 30px;
+}
+
+.analytics-summary-heading {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: #111827;
+}
+
+.analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+
+.analytics-summary .summary-card {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.055);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.analytics-summary .summary-card:hover {
+    transform: translateY(-2px);
+    border-color: #e1e4ea;
+    box-shadow:
+        0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.analytics-summary .summary-card p {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a93a3;
+}
+
+.analytics-summary .summary-card h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+    color: #111827;
+}
+
+/* =========================================================
+   ANALYTICS UI REDESIGN - STEP 3 FINAL
+   FULL WIDTH SUMMARY + INSIGHTS
+   ========================================================= */
+
+/* Analytics Summary full width */
+
+.analytics-summary-section {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 0;
+
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+    padding: 22px;
+    box-sizing: border-box;
+
+    box-shadow:
+        0 7px 22px rgba(15, 23, 42, 0.055);
+}
+
+.analytics-summary-heading {
+    margin: 0 0 18px;
+
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: #111827;
+}
+
+.analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.analytics-summary .summary-card {
+    min-width: 0;
+
+    background: #f8f9fc;
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+    padding: 17px;
+    box-sizing: border-box;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.analytics-summary .summary-card:hover {
+    transform: translateY(-2px);
+    border-color: #e1e4ea;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.analytics-summary .summary-card p {
+    margin: 0 0 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a93a3;
+}
+
+.analytics-summary .summary-card h3 {
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+    color: #111827;
+}
+
+
+/* =========================================================
+   FINANCIAL INSIGHTS - FULL WIDTH
+   ========================================================= */
+
+.analytics-card.financial-insights-card {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.financial-insights-card h3 {
+    margin-bottom: 18px;
+}
+
+.financial-insights {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.financial-insights .insight-item {
+    min-width: 0;
+
+    height: 100%;
+    box-sizing: border-box;
+
+    padding: 16px;
+
+    background: #f8f9fc;
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.financial-insights .insight-item:hover {
+    transform: translateY(-2px);
+    border-color: #e1e4ea;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================================================
+   DARK MODE POLISH - STEP 1
+   DASHBOARD
+   ========================================================= */
+
+body.dark-mode .main-content {
+    background: transparent;
+    color: #f9fafb;
+}
+
+/* Dashboard section headings */
+
+body.dark-mode .section-header h2,
+body.dark-mode .budget-header h2,
+body.dark-mode .goals-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .section-header p,
+body.dark-mode .budget-header p,
+body.dark-mode .goals-header p {
+    color: #9ca3af;
+}
+
+
+/* Monthly Budget */
+
+body.dark-mode .budget-card {
+    background: #1f2937;
+    border: 1px solid #374151;
+    color: #f9fafb;
+}
+
+body.dark-mode .budget-info p {
+    color: #9ca3af;
+}
+
+body.dark-mode .budget-info h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .budget-progress-bar {
+    background: #374151;
+}
+
+body.dark-mode #budgetPercentage {
+    color: #9ca3af;
+}
+
+
+/* Spending Overview */
+
+body.dark-mode .dashboard-content-grid .finance-card {
+    background: #1f2937;
+    border: 1px solid #374151;
+    color: #f9fafb;
+}
+
+body.dark-mode .dashboard-content-grid .finance-card h2,
+body.dark-mode .dashboard-content-grid .finance-card h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .dashboard-content-grid .finance-card p {
+    color: #9ca3af;
+}
+
+
+/* Dashboard dropdown */
+
+body.dark-mode .dashboard-content-grid select,
+body.dark-mode #spendingPeriod {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+
+/* Dashboard summary cards */
+
+body.dark-mode .summary-card,
+body.dark-mode .overview-card {
+    color: #f9fafb;
+}
+
+body.dark-mode .summary-card p,
+body.dark-mode .overview-card p {
+    color: #9ca3af;
+}
+
+body.dark-mode .summary-card h3,
+body.dark-mode .overview-card h3 {
+    color: #f9fafb;
+}
+
+/* =================================
+   DARK MODE - FINAL TEXT & CARD FIX
+================================ */
+
+/* Main dashboard headings */
+body.dark-mode .header h1 {
+    color: #f9fafb;
+}
+
+body.dark-mode .header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .section-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .section-header p {
+    color: #9ca3af;
+}
+
+
+/* ================================
+   MONTHLY BUDGET
+================================ */
+
+body.dark-mode .budget-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .budget-header p {
+    color: #9ca3af;
+}
+
+/* Important:
+   Budget stat boxes stay light,
+   so their values must stay dark.
+*/
+body.dark-mode .budget-stat p {
+    color: #69758a;
+}
+
+body.dark-mode .budget-stat h3 {
+    color: #111827;
+}
+
+body.dark-mode .budget-progress-bar {
+    background: #374151;
+}
+
+body.dark-mode #budgetPercentage {
+    color: #9ca3af;
+}
+
+
+/* ================================
+   FINANCIAL GOALS
+================================ */
+
+body.dark-mode .dashboard-content-grid .goals-section {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .dashboard-content-grid .goals-section .goals-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .dashboard-content-grid .goals-section .goals-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .dashboard-content-grid .goal-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .dashboard-content-grid .goal-card-header h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .dashboard-content-grid .goal-card-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .dashboard-content-grid .goal-amounts span {
+    color: #9ca3af;
+}
+
+body.dark-mode .dashboard-content-grid .goal-amounts strong {
+    color: #f9fafb;
+}
+
+body.dark-mode .dashboard-content-grid .goal-description {
+    color: #9ca3af;
+}
+
+body.dark-mode .dashboard-content-grid .goal-progress-bar {
+    background: #374151;
+}
+
+
+/* ================================
+   RECURRING TRANSACTIONS
+================================ */
+
+body.dark-mode .recurring-section {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .recurring-section .goals-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .recurring-section .goals-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .recurring-section .goal-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .recurring-section .goal-card-header h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .recurring-section .goal-card-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .recurring-section .goal-amounts {
+    border-top-color: #374151;
+}
+
+body.dark-mode .recurring-section .goal-amounts span {
+    color: #9ca3af;
+}
+
+body.dark-mode .recurring-section .goal-amounts strong {
+    color: #f9fafb;
+}
+
+body.dark-mode .recurring-section .goal-description {
+    color: #9ca3af;
+    border-top-color: #374151;
+}
+
+
+/* ================================
+   RECENT TRANSACTIONS
+================================ */
+
+body.dark-mode .transactions-section {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .transactions-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .transactions-header p {
+    color: #9ca3af;
+}
+
+body.dark-mode .transaction-item {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .transaction-title {
+    color: #f9fafb;
+}
+
+body.dark-mode .transaction-meta {
+    color: #9ca3af;
+}
+
+/* =================================
+   ANALYTICS - DARK MODE FIX
+================================ */
+
+/* Analytics page heading */
+body.dark-mode .analytics-header h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .analytics-header p {
+    color: #9ca3af;
+}
+
+
+/* Analytics chart cards */
+body.dark-mode .analytics-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .analytics-card h3 {
+    color: #f9fafb;
+}
+
+
+/* Analytics summary */
+body.dark-mode .analytics-summary {
+    color: #f9fafb;
+}
+
+body.dark-mode .summary-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .summary-card p {
+    color: #9ca3af;
+}
+
+body.dark-mode .summary-card h3 {
+    color: #f9fafb;
+}
+
+
+/* Budget vs Actual / Spending Metrics */
+body.dark-mode .analytics-section h3 {
+    color: #f9fafb;
+}
+
+body.dark-mode .analytics-section p {
+    color: #9ca3af;
+}
+
+
+/* Financial Insights */
+body.dark-mode .financial-insights {
+    color: #f9fafb;
+}
+
+body.dark-mode .financial-insights .insight-item {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.dark-mode .financial-insights .insight-item h4 {
+    color: #f9fafb;
+}
+
+body.dark-mode .financial-insights .insight-item p {
+    color: #9ca3af;
+}
+
+/* =========================================
+   ANALYTICS - FINAL DARK MODE TEXT FIX
+========================================= */
+
+/* Analytics Summary heading */
+body.dark-mode .analytics-summary-heading {
+    color: #f9fafb !important;
+}
+
+
+/* Financial Insights heading */
+body.dark-mode .financial-insights-card > h3 {
+    color: #f9fafb !important;
+}
+
+
+/* Financial Insight titles */
+body.dark-mode .financial-insights .insight-content strong {
+    color: #f9fafb !important;
+}
+
+
+/* Financial Insight descriptions */
+body.dark-mode .financial-insights .insight-content p {
+    color: #cbd5e1 !important;
+}
+
+
+/* Spending Metrics */
+body.dark-mode .spending-metrics-card .spending-metric span {
+    color: #9ca3af !important;
+}
+
+body.dark-mode .spending-metrics-card .spending-metric strong {
+    color: #f9fafb !important;
+}
+
+
+/* Budget status */
+body.dark-mode .budget-status {
+    color: #9ca3af !important;
+}
+
+/* Analytics Summary heading - dark mode */
+body.dark-mode .analytics-summary-section .analytics-summary-heading {
+    color: #111827 !important;
+}
+
+/* =================================
+   CSV EXPORT BUTTON
+================================ */
+
+.export-csv-btn {
+    height: 40px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 9px;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.export-csv-btn:hover {
+    background: #e0e7ff;
+    transform: translateY(-1px);
+}
+
+
+/* Dark mode */
+body.dark-mode .export-csv-btn {
+    background: #312e81;
+    color: #c7d2fe;
+}
+
+body.dark-mode .export-csv-btn:hover {
+    background: #3730a3;
+}
+
+/* =================================
+   CSV IMPORT BUTTON
+================================ */
+
+.import-csv-btn {
+    height: 40px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 9px;
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.import-csv-btn:hover {
+    background: #dcfce7;
+    transform: translateY(-1px);
+}
+
+/* Dark mode */
+
+body.dark-mode .import-csv-btn {
+    background: #14532d;
+    color: #bbf7d0;
+}
+
+body.dark-mode .import-csv-btn:hover {
+    background: #166534;
+}
+
+/* =================================
+   FINANCEFLOW AUTHENTICATION UI
+================================= */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: #f4f6fb;
+    box-sizing: border-box;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 38px;
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.09);
+    box-sizing: border-box;
+}
+
+.auth-card > h1 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 750;
+    color: #4f46e5;
+}
+
+.auth-subtitle {
+    margin: 0 0 30px;
+    text-align: center;
+    font-size: 13px;
+    color: #7b8494;
+}
+
+.auth-card form h2 {
+    margin: 0 0 7px;
+    font-size: 23px;
+    color: #111827;
+}
+
+.auth-card form > p {
+    margin: 0 0 24px;
+    font-size: 13px;
+    color: #7b8494;
+}
+
+.auth-input-group {
+    margin-bottom: 18px;
+}
+
+.auth-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.auth-input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e3e7ee;
+    border-radius: 9px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: #111827;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-input-group input:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.auth-btn:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+.auth-switch {
+    margin: 22px 0 0 !important;
+    text-align: center;
+    font-size: 13px;
+    color: #7b8494;
+}
+
+.auth-switch a {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+#authMessage {
+    margin: 15px 0 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 27px 22px;
+    }
+}
+/* =================================
+   AUTHENTICATION SCREEN VISIBILITY
+================================= */
+
+body.auth-active .sidebar,
+body.auth-active .main-content {
+    display: none !important;
+}
+
+body.auth-active .auth-container {
+    display: flex;
+}
+
+body:not(.auth-active) .auth-container {
+    display: none;
+}
