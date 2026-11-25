@@ -155,6 +155,6 @@ It helps users track their spending, manage budgets, achieve financial goals, an
 
 ---
 
-**Live Server Extension:** [Install Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+🚀 **Live Demo:** [FinanceFlow Dashboard](https://amishakumaripoly2003-creator.github.io/FinanceFlow/)
 
 ### FinanceFlow – Manage Your Money Smarter! 💰
