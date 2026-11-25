@@ -76,7 +76,7 @@ It provides an interactive dashboard to track financial activities and manage pe
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/amishakumaripoly2003-creator/FinanceFlow.git
 ```
 
 ### 2. Open Project Folder
@@ -154,5 +154,7 @@ It helps users track their spending, manage budgets, achieve financial goals, an
 - Enhanced Mobile Experience
 
 ---
+
+**Live Server Extension:** [Install Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ### FinanceFlow – Manage Your Money Smarter! 💰
